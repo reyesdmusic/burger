@@ -11,19 +11,17 @@ $(function() {
         type: "PUT",
         data: newStatus    
       })
-      // .then(function() {
-      //     console.log("changed status to devoured");
-      //     location.reload();
-      //   }
-      // );
+      .then(function() {
+          console.log("changed status to devoured");
+          location.reload();
+        }
+      );
 
-      console.log("changed status to devoured");
-      location.reload();
+
     });
   
-    $(".create-form").on("submit", function(event) {
+    $("#submit").on("click", function(event) {
      
-      event.preventDefault();
 
       console.log("submit clicked");
       
@@ -36,13 +34,11 @@ $(function() {
         type: "POST",
         data: newBurger
       })
-      // .then(function() {
-      //     console.log("created new burger");
-      //     location.reload();
-      //   }
-      // );
-      console.log("created new burger");
-      location.reload();
+      .then(function() {
+          console.log("created new burger");
+          location.reload();
+        }
+      );
     });
   
   });

@@ -13,7 +13,7 @@ let orm = {
     },
 
     insertOne: function(table, column, value, callback) {
-      var queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (${value});`
+      var queryString = `INSERT INTO ${table} (${column}) VALUES ("${value}");`
   
       console.log(queryString);
   
@@ -27,7 +27,7 @@ let orm = {
     },
    
     updateOne: function(table, column, colVal, updateCol, updateVal, callback) {
-      var queryString = `UPDATE ${table} SET ${column} = ${colVal} WHERE ${updateCol} = ${updateVal}`;
+      var queryString = `UPDATE ${table} SET ${updateCol} = ${updateVal} WHERE ${column} = ${colVal}`;
   
       console.log(queryString);
       connection.query(queryString, function(err, result) {

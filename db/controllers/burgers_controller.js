@@ -1,9 +1,11 @@
-var express = require("express");
+const express = require("express");
 
-var router = express.Router();
+const router = express.Router();
 
+// Import the burger model to use its database functions.
+const burger = require("../../models/burger");
 
-var burger = require("../../models/burger");
+// Create all our routes and set up logic within those routes where required.
 
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
@@ -26,6 +28,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
   burger.updateOne(req.params.id, req.body.devoured, function(result) {
     if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
       res.status(200).end();
@@ -33,5 +36,5 @@ router.put("/api/burgers/:id", function(req, res) {
   });
 });
 
-
+// Export routes for server.js to use.
 module.exports = router;

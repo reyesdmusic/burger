@@ -1,5 +1,7 @@
+// Import MySQL connection.
 const connection = require("./connection");
 
+// Object for all our SQL statement functions.
 let orm = {
 
     selectAll: function(table, callback) {
@@ -41,4 +43,5 @@ let orm = {
 
   };
 
+// Export the orm object for burger model to use in  burger.js .
 module.exports = orm;

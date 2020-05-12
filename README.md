@@ -1,4 +1,4 @@
-# Employee-Tracker README
+# Burger Destroyer README
 
 # Table of contents
 1. [Project Description](#descriptionLink)
